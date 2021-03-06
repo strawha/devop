@@ -6,17 +6,17 @@ pipeline {
     }
     agent any
     stages {
+       stage('test'){
+            steps {
+                sh 'pip3 install pytest'
+                sh 'pytest'
+            }
+        }
         stage('Build') {
             steps{
                 script {
                     dockerImage = docker.build registry + ":latest"
                 }
-            }
-        }
-        stage('test'){
-            steps {
-                sh 'pip3 install pytest'
-                sh 'pytest'
             }
         }
         stage('Archive'){
