@@ -6,13 +6,6 @@ pipeline {
     }
     agent any
     stages {
-        stage('Build') {
-            steps{
-                script {
-                    dockerImage = docker.build registry + ":latest"
-                }
-            }
-        }
         stage('test'){
             steps {
                 sh 'pip3 install pytest'
