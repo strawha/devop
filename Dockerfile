@@ -1,5 +1,5 @@
 FROM python:3.8.5
-MAINTAINER vikrant
+MAINTAINER strawha
 WORKDIR /devop
 ADD . /devop
 EXPOSE 4000
