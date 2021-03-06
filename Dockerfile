@@ -1,6 +1,6 @@
 FROM python:3.8.5
 MAINTAINER vikrant
-WORKDIR /calculator
-ADD . /calculator
+WORKDIR /devop
+ADD . /devop
 EXPOSE 4000
-CMD ["python","calc.py"]
+CMD ["python","calculator.py"]
