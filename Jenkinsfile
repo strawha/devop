@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "swapnil085/calculator"
+        registry = "strawha/devop"
         registryCredential = 'dockerhub'
         dockerImage = ''
     }
@@ -26,11 +26,6 @@ pipeline {
                     dockerImage.push()
                     }
                 }
-            }
-        }
-        stage('Deploy') {
-            steps {
-                build 'Rundeck_deploy'
             }
         }
     }
