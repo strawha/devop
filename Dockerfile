@@ -3,4 +3,4 @@ MAINTAINER vikrant1strawha
 WORKDIR /devop
 ADD . /devop
 EXPOSE 4000
-CMD ["python","calculator.py"]
+CMD ["python","devop.py"]
