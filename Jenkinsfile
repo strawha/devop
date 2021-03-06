@@ -12,14 +12,5 @@ pipeline {
                 sh 'pytest'
             }
         }
-        stage('Archive'){
-            steps{
-                script {
-                    docker.withRegistry( '', registryCredential ) {
-                    dockerImage.push()
-                    }
-                }
-            }
-        }
     }
 }
