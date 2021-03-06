@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "strawha/devop"
+        registry = "vikrant1strawha/devop"
         registryCredential = 'dockerhub'
         dockerImage = ''
     }
