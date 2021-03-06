@@ -15,18 +15,18 @@ pipeline {
         stage('Build') {
             steps{
                 script {
-                    dockerImage = docker.build registry + ":latest"
-                }
-            }
+                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
-        stage('Archive'){
-            steps{
-                script {
-                    docker.withRegistry( '', registryCredential ) {
-                    dockerImage.push()
-                    }
-                }
-            }
+      }
+    }
+    stage('Deploy Image') {
+      steps{
+        script {
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          }
         }
+      }
+    }
     }
 }
