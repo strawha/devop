@@ -1,16 +1,13 @@
-from calculator import sum,divide,multiply,diff
-import unittest
+from calculator import *
 
-class CalculatorTest(unittest.TestCase):
-    def test_sum(self):
-        assert sum(1,3) == 4
+def test_sum():
+    assert sum(1,3) == 4
 
-    def test_diff(self):
-        assert diff(4,2) == 2
+def test_diff():
+    assert diff(4,2) == 2
 
-    def test_multiply(self):
-        assert multiply(2,3) == 6
-        assert multiply(0,2) == 0
+def test_multiply():
+    assert multiply(2,3) == 6
 
-    def test_divide(self):
-        assert divide(4,2) == 2
+def test_divide():
+    assert divide(4,2) == 2
