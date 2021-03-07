@@ -6,27 +6,27 @@ pipeline {
     }
     agent any
     stages {
-       stage('test'){
+       stage('Build') {
+            steps{
+                script {
+                    dockerImage = docker.build registry + ":latest"
+                }
+            }
+        }
+        stage('test'){
             steps {
                 sh 'pip3 install pytest'
                 sh 'pytest'
             }
         }
-        stage('Build') {
+        stage('Archive'){
             steps{
                 script {
-                     dockerImage = docker.build registry + ":$latest"
+                    docker.withRegistry( '', registryCredential ) {
+                    dockerImage.push()
+                    }
                 }
-             }
+            }
         }
-    stage('Deploy Image') {
-      steps{
-        script {
-          docker.withRegistry( '', registryCredential ) {
-            dockerImage.push()
-                }
-             }
-          }
-       }
     }
 }
