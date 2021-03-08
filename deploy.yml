@@ -1,5 +1,5 @@
 ---
-- name: Deploy a jar file
+- name: Deploy a pyc file
   hosts: all
   remote_user: vikrant
   tasks:
