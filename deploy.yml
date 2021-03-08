@@ -1,0 +1,14 @@
+---
+- name: Deploy a jar file
+  hosts: all
+  remote_user: vikrant
+  tasks:
+    - name: Installing python package
+      apt:
+        name: python3
+        state: present
+    - name: Copy .pyc file to home directory
+      copy:
+        src: ./calculator.pyc
+        dest: ~/
+        mode: '0755'
