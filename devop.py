@@ -28,9 +28,9 @@ if __name__ == "__main__":
         z = natural_log(y)
         print(z)
     else:
-        x = int(input("enter the first number: "))
-        y = int(input("enter the second number: "))
-        z = power(x,y)
+        a = int(input("enter the first number: "))
+        b = int(input("enter the second number: "))
+        z = power(a,b)
         print(z)
 
     logging.basicConfig(filename="logFile.txt",
