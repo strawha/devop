@@ -9,6 +9,6 @@
         state: present
     - name: Copy .pyc file to home directory
       copy:
-        src: ./calculator.pyc
+        src: ./calc.pyc
         dest: ~/
         mode: '0755'
