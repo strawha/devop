@@ -1,14 +1,8 @@
 ---
-- name: Deploy a pyc file
+- name: Pull docker image of devop
   hosts: all
-  remote_user: vikrant
   tasks:
-    - name: Installing python package
-      apt:
-        name: python3
-        state: present
-    - name: Copy .pyc file to home directory
-      copy:
-        src: ./calc.pyc
-        dest: ~/
-        mode: '0755'
+    - name: Pull devop image
+      docker_image:
+        name: vikrant1strawha/devop
+        source: pull
