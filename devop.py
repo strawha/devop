@@ -53,4 +53,4 @@ if __name__ == "__main__":
                     format='%(asctime)s %(levelname)s-%(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',level=logging.DEBUG)
     logging.info(x)
-    logging.info(z))
+    logging.info(z)
